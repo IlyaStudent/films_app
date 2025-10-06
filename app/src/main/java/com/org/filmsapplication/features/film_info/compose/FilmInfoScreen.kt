@@ -97,7 +97,7 @@ fun FilmInfoScreen(
                     Text(
                         text = stringResource(
                             R.string.genres_and_year,
-                            film.genres.joinToString(),
+                            if (film.genres.isEmpty()) "" else film.genres.joinToString(postfix = ", "),
                             film.year
                         ),
                         style = Typography.bodyLarge,
