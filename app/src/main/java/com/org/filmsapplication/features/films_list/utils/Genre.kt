@@ -4,6 +4,8 @@ import com.org.filmsapplication.R
 
 enum class Genre(
     val stringResource: Int,
+    // Добавил для фильтрации данных по жанру
+    // Возможно, проверку на соответствие жанру можно сделать как то элегантнее
     val russianName: String,
 ) {
     BIOGRAPHY(R.string.biography, "биография"),

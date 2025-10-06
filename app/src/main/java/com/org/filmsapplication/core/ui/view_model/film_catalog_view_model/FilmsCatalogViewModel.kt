@@ -24,6 +24,8 @@ import kotlinx.coroutines.flow.stateIn
 
 typealias FilmsListState = ApiResponseState<FilmsListEntity>
 
+// Не уверен, что это лучший подход по разделению зон отвественности вью модели,
+// но хотелось немного поэксперементировать
 class FilmsCatalogViewModel(
     private val getFilmsListUseCase: GetFilmsListUseCase,
 ) : ViewModel(),
@@ -70,7 +72,9 @@ class FilmsCatalogViewModel(
                 _responseState.value = ApiResponseState.Loading()
             }
             .onEach { data ->
-                _responseState.value = ApiResponseState.Success(data)
+                val sortedFilms = data.films.sortedBy { it.localizedName.lowercase() }
+                val sortedData = data.copy(films = sortedFilms)
+                _responseState.value = ApiResponseState.Success(sortedData)
             }
             .catch { throwable ->
                 _responseState.value = ApiResponseState.Error(throwable)
