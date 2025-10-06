@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.org.filmsapplication.core.ui.theme.Yellow
 
 @Composable
 fun CustomProgressIndicator(modifier: Modifier = Modifier) {
@@ -21,7 +22,8 @@ fun CustomProgressIndicator(modifier: Modifier = Modifier) {
         ) {
             CircularProgressIndicator(
                 modifier = modifier.size(48.dp),
-                strokeWidth = 2.dp,
+                strokeWidth = 4.dp,
+                color = Yellow,
             )
         }
     }
