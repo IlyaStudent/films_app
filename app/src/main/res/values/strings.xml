@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Films Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back">Назад</string>
+    <string name="repeat">ПОВТОРИТЬ\n</string>
+    <string name="network_error">Ошибка подключения сети</string>
+    <string name="biography">биография</string>
+    <string name="action">боевик</string>
+    <string name="detective">детектив</string>
+    <string name="drama">драма</string>
+    <string name="comedy">комедия</string>
+    <string name="criminal">криминал</string>
+    <string name="melodrama">мелодрама</string>
+    <string name="musical">мюзикл</string>
+    <string name="adventure">приключения</string>
+    <string name="thriller">триллер</string>
+    <string name="horror">ужасы</string>
+    <string name="fantasy">фантастика</string>
+    <string name="films">Фильмы</string>
+    <string name="image_for_film">Изображение к фильму %1$s</string>
+    <string name="no_image">Нет изображения</string>
+    <string name="genres">Жанры</string>
+    <string name="kinopoisk">КиноПоиск</string>
+</resources>
