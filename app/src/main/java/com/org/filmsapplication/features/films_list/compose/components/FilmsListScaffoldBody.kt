@@ -25,7 +25,7 @@ fun FilmsListScaffoldBody(
     onFilmClick: (FilmEntity) -> Unit,
 ) {
     LazyVerticalGrid(
-        modifier = modifier,
+        modifier = modifier.padding(top = 8.dp, bottom = 16.dp),
         columns = GridCells.Fixed(2),
         horizontalArrangement = Arrangement.spacedBy(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
