@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -63,6 +64,7 @@ fun FilmInfoScreen(
                 Box(
                     modifier = Modifier
                         .fillMaxWidth(0.4f)
+                        .aspectRatio(2f / 3f)
                         .clip(
                             RoundedCornerShape(4.dp)
                         )
@@ -93,7 +95,11 @@ fun FilmInfoScreen(
                     )
 
                     Text(
-                        text = "${film.genres.joinToString()}, ${film.year} год ",
+                        text = stringResource(
+                            R.string.genres_and_year,
+                            film.genres.joinToString(),
+                            film.year
+                        ),
                         style = Typography.bodyLarge,
                         color = GreyText
                     )
@@ -106,13 +112,15 @@ fun FilmInfoScreen(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         verticalAlignment = Alignment.Bottom,
                     ) {
-                        Text(
-                            text = film.rating?.shorten(1).toString(),
-                            style = Typography.titleLarge,
-                            fontSize = 24.sp,
-                            lineHeight = 28.sp,
-                            color = Blue,
-                        )
+                        film.rating?.let { filmRating ->
+                            Text(
+                                text = filmRating.shorten(1).toString(),
+                                style = Typography.titleLarge,
+                                fontSize = 24.sp,
+                                lineHeight = 28.sp,
+                                color = Blue,
+                            )
+                        }
 
                         Text(
                             text = stringResource(R.string.kinopoisk),

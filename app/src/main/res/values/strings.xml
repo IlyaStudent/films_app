@@ -22,4 +22,5 @@
     <string name="no_image">Нет изображения</string>
     <string name="genres">Жанры</string>
     <string name="kinopoisk">КиноПоиск</string>
+    <string name="genres_and_year">"%1$s, %2$d год "</string>
 </resources>
